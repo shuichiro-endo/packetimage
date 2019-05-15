@@ -12,14 +12,21 @@ For example, start and end node, protocol, port number, and so on.
 This tool can do the following.
 
 - Output packet flow graph image (PNG) from pcap file
+    - L2 type
+        - Private and Multicast Address
+        - Type
+            - IPv4:red, ARP:greenyellow, IPv6:cyan, ...
+        - Vlan ID
     - IPv4 type
         - Private, Multicast, and Global Address
-        - Start and End node
         - Protocol
-            - IP, ICMP, TCP, UDP
+            - ICMP:black, TCP:green, UDP:orange
         - Source and Destination Port Number
-    - L2 and IPv6 type
-        - <font style="color:blue">Note: l2 and ipv6 type are not implemented now.</font>
+    - IPv6 type
+        - Link Local, Unique Local, Multicast and Global Address
+        - Protocol
+            - ICMP6:black, TCP:green, UDP:orange
+        - Source and Destination Port Number
 
 
 ## Installation
@@ -39,10 +46,10 @@ Also, You need to install the following packages.
 1. Run
     ````
     $ python packetimage.py -h
-    usage: Usage: python packetimage.py parsetype inputfile outputfile [--help]
+    usage: python packetimage.py parsetype inputfile outputfile [--help]
 
     positional arguments:
-      parsetype   ipv4 (l2 and ipv6 type are not implemented.)
+      parsetype   l2 or ipv4 or ipv6
       inputfile   input pcap file name
       outputfile  output file name (The file extension does not include.)
 
@@ -52,9 +59,17 @@ Also, You need to install the following packages.
     $ python packetimage.py ipv4 test.pcap testimage
     ````
 
-## Screenshot
 
-![001.png](./image/001.png)
+## Sample
+- L2 type
+    - ![l2-001.png](./image/l2-001.png)
 
-![002.png](./image/002.png)
+    - ![l2-002.png](./image/l2-002.png)
 
+- IPv4 type
+    - ![ipv4-001.png](./image/ipv4-001.png)
+
+    - ![ipv4-002.png](./image/ipv4-002.png)
+
+- IPv6 type
+    - ![ipv6-001.png](./image/ipv6-001.png)
