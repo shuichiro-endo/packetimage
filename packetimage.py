@@ -584,7 +584,7 @@ def pcapParserIpv4():
 		try:
 			eth = dpkt.ethernet.Ethernet(buf)
 		except:
-			print 'Fail parse frame no:', packet_count, ' skipped.'
+			print 'Fail parse frame no:', packetcount, ' skipped.'
 			continue
 
 		src_macaddress = mac_addr(eth.src)
@@ -799,7 +799,7 @@ def pcapParserIpv6():
 		try:
 			eth = dpkt.ethernet.Ethernet(buf)
 		except:
-			print 'Fail parse frame no:', packet_count, ' skipped.'
+			print 'Fail parse frame no:', packetcount, ' skipped.'
 			continue
 
 		src_macaddress = mac_addr(eth.src)
